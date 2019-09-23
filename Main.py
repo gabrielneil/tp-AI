@@ -1,5 +1,6 @@
 import csv
 import random
+
 import numpy as np
 
 # vars definition
@@ -46,5 +47,5 @@ for x in range(x0.__len__()):
     error = float(y[x]) - oK
     errors.append(error)
     preDeltaW = (0.2 * error)
-
-print(errors)
+    preDeltaWArray = [(preDeltaW * w[0]), (preDeltaW * w[1]), (preDeltaW * w[2]), (preDeltaW * w[3]),
+                      (preDeltaW * w[4])]
