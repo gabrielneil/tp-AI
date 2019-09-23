@@ -1,5 +1,6 @@
 import csv
 import random
+import numpy as np
 
 # vars definition
 x0 = []
@@ -10,7 +11,7 @@ x4 = []
 y = []
 w = []
 u = []
-
+error = []
 # csv files reference
 with open('X_train.csv', 'r') as x_train, open('Y_train.csv', 'r') as y_train:
     csv_x_train = csv.reader(x_train)
@@ -25,8 +26,11 @@ with open('X_train.csv', 'r') as x_train, open('Y_train.csv', 'r') as y_train:
         x4.append(line[4])
 
         # loading y array
-        for line in csv_y_train:
-            y.append(line)
+        yAux = []
+    for line in csv_y_train:
+        yAux.append(line)
+
+y = np.array(yAux)
 
 # init randoms weight
 for x in range(5):
@@ -34,5 +38,8 @@ for x in range(5):
 
 # calculation
 for x in range(x0.__len__()):
-    u.append((float(x0[x]) * float(w[0])) + (float(x1[x]) * float(w[1])) + (float(x2[x]) * float(w[2])) + (
-            float(x3[x]) * float(w[3])) + (float(x4[x]) * float(w[4])))
+    oK = (float(x0[x]) * float(w[0])) + (float(x1[x]) * float(w[1])) + (float(x2[x]) * float(w[2])) + (
+            float(x3[x]) * float(w[3])) + (float(x4[x]) * float(w[4]))
+    u.append(oK)
+    result = float(y[x]) - oK
+    error.append(result)
