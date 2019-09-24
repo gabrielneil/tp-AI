@@ -14,7 +14,7 @@ w = []
 u = []
 errors = []
 deltaW = []
-
+yAux = []
 # csv files reference
 with open('X_train.csv', 'r') as x_train, open('Y_train.csv', 'r') as y_train:
     csv_x_train = csv.reader(x_train)
@@ -29,7 +29,6 @@ with open('X_train.csv', 'r') as x_train, open('Y_train.csv', 'r') as y_train:
         x4.append(line[4])
 
         # loading Y array
-        yAux = []
     for line in csv_y_train:
         yAux.append(line)
 
