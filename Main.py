@@ -43,9 +43,18 @@ for x in range(5):
 for x in range(x0.__len__()):
     oK = (float(x0[x]) * float(w[0])) + (float(x1[x]) * float(w[1])) + (float(x2[x]) * float(w[2])) + (
             float(x3[x]) * float(w[3])) + (float(x4[x]) * float(w[4]))
+    # u list
     u.append(oK)
     error = float(y[x]) - oK
+    # error list
     errors.append(error)
+    # learning rate * error
     preDeltaW = (0.2 * error)
     preDeltaWArray = [(preDeltaW * w[0]), (preDeltaW * w[1]), (preDeltaW * w[2]), (preDeltaW * w[3]),
                       (preDeltaW * w[4])]
+    # update weights
+    w[0] += preDeltaWArray[0]
+    w[1] += preDeltaWArray[1]
+    w[2] += preDeltaWArray[2]
+    w[3] += preDeltaWArray[3]
+    w[4] += preDeltaWArray[4]
