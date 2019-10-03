@@ -48,7 +48,7 @@ for x in range(x0.__len__()):
     # error list
     errors.append(error)
     # learning rate * error
-    preDeltaW = (0.2 * error)
+    preDeltaW = (0.1 * error)
     preDeltaWArray = [(preDeltaW * w[0]), (preDeltaW * w[1]), (preDeltaW * w[2]), (preDeltaW * w[3]),
                       (preDeltaW * w[4])]
     # update weights
