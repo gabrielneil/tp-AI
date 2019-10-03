@@ -15,6 +15,8 @@ u = []
 errors = []
 deltaW = []
 yAux = []
+learningRate = 0.1
+
 # csv files reference
 with open('X_train.csv', 'r') as x_train, open('Y_train.csv', 'r') as y_train:
     csv_x_train = csv.reader(x_train)
@@ -48,7 +50,7 @@ for x in range(x0.__len__()):
     # error list
     errors.append(error)
     # learning rate * error
-    preDeltaW = (0.1 * error)
+    preDeltaW = (learningRate * error)
     preDeltaWArray = [(preDeltaW * w[0]), (preDeltaW * w[1]), (preDeltaW * w[2]), (preDeltaW * w[3]),
                       (preDeltaW * w[4])]
     # update weights
