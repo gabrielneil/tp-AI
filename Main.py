@@ -77,8 +77,7 @@ def getErrorsSum():
     return res
 
 
-# calculate
-
+# trainning
 def train(errorCuadratico):
     level = 0
     while errorCuadratico > 0.2:
@@ -111,6 +110,7 @@ def train(errorCuadratico):
     return errorCuadratico
 
 
+# clasificador
 def sort():
     for x in range(Sample0.__len__()):
         nextU = (float(Sample0[x]) * float(w[0])) + (float(Sample1[x]) * float(w[1])) + (
@@ -134,6 +134,6 @@ print("error cuadratico: " + errorCuadraticoFinal.__str__())
 print("Vector Pesos W " + w.__str__())
 print("Vector U de Entrenamiento:" + u.__str__() + "\n")
 print("-------------Clasificador-----------------")
-print("Vectoru U Final: " + finalU.__str__())
+print("Vector U Final: " + finalU.__str__())
 print("Cantiad de elementos grupo en 1: " + salidaFinal1.__len__().__str__())
 print("Cantiad de elementos grupo en 0: " + salidaFinal0.__len__().__str__())
