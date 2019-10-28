@@ -91,6 +91,7 @@ def evaluate_algorithm(dataset, datasetFinal, algorithm, n_folds, *args):
         actual = [row[-1] for row in fold]
         accuracy = accuracy_metric(actual, predicted)
         scores.append(accuracy)
+        print("Estado Red neuronal: " + network_trained.__str__())
         predicted_test = back_propagation_prediction(datasetFinal, network_trained)
     return scores, predicted_test
 
@@ -235,6 +236,12 @@ n_epoch = 500
 n_hidden = 5
 u = []
 scores, u = evaluate_algorithm(dataset, datasetFinal, back_propagation, n_folds, l_rate, n_epoch, n_hidden)
+for element in u:
+    if element == 0:
+        element =1
+    else:
+        element=0
+
 a = numpy.asarray(u)
 numpy.savetxt("final.csv", a, delimiter=",")
 print('Scores: %s' % scores)
