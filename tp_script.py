@@ -238,12 +238,12 @@ u = []
 scores, u = evaluate_algorithm(dataset, datasetFinal, back_propagation, n_folds, l_rate, n_epoch, n_hidden)
 for element in u:
     if element == 0:
-        element =1
+        element = 1
     else:
-        element=0
+        element = 0
 
 a = numpy.asarray(u)
 numpy.savetxt("final.csv", a, delimiter=",")
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores) / float(len(scores))))
-print("\n" + "predicciones de x_test : " + u.__str__()) 
+print("\n" + "predicciones de x_test : " + u.__str__())
