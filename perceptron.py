@@ -212,7 +212,7 @@ def back_propagation_prediction(test, network):
 # Test Backprop on Seeds dataset
 seed(1)
 # load and prepare data
-filename = 'X_Y_train_final.csv'
+filename = 'datasets/X_Y_train_final.csv'
 filenameFinal = 'X_test.csv'
 datasetFinal = load_csv(filenameFinal)
 dataset = load_csv(filename)

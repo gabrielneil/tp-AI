@@ -1,2 +1,2 @@
 # tp_iar
-Repo para tp de iar
+End to end perceptron algorithm 
